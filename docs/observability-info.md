@@ -77,7 +77,7 @@ Cache     │   (Single Pod)
 APIs      ┘
 ```
 
-You can view the [OpenTelemetry installation documentation](monitoring-getting-started.md#step-4-install-opentelemetry) for detailed deployment instructions.
+You can view the [OpenTelemetry installation documentation](monitoring-getting-started.md#install-opentelemetry) for detailed deployment instructions.
 
 ### Configuration
 
@@ -90,7 +90,7 @@ OpenTelemetry collectors are configured to:
   - Logs → Loki (OTLP/HTTP)
   - Traces → Tempo (OTLP/gRPC)
 
-For more information, see the [Observability Stack Overview](monitoring-info.md).
+For more information, see the [Observability Stack Overview](monitoring-observability-overview.md).
 
 ## Logging
 
@@ -116,7 +116,7 @@ The collector automatically:
 
 [Loki](https://grafana.com/oss/loki/) provides cost-effective log aggregation and querying. Unlike traditional log systems, Loki only indexes labels (not log content), making it highly efficient for large-scale deployments.
 
-You can view the [Loki installation documentation](infrastructure-loki.md) to get an idea of how we're deploying it in the Genestack infrastructure.
+You can view the [Loki installation documentation](monitoring-loki.md) to get an idea of how we're deploying it in the Genestack infrastructure.
 You can view the source code at [Loki Github](https://github.com/grafana/loki/tree/main).
 
 Loki handles:
@@ -240,9 +240,9 @@ Prometheus collects metrics from multiple sources:
 - **Message Queues** - 20+ RabbitMQ metrics
 - **Cache** - 15+ Memcached metrics
 
-For a complete list, see the [Base Metrics Reference](otel-base-metrics.md) and [Additional Metrics Reference](otel-ext-metrics.md).
+For a complete list, see the [Base Metrics Reference](monitoring-otel-base-metrics.md).
 
-We have covered Prometheus, Prometheus alerting and the AlertManager in greater detail in the [Monitoring](monitoring-info.md) and [Alerting](alerting-info.md) documentation.
+We have covered Prometheus, Prometheus alerting and the AlertManager in greater detail in the [Monitoring](monitoring-observability-overview.md) and [Alerting](alerting-info.md) documentation.
 
 ## Visualization
 
@@ -319,7 +319,7 @@ An example dashboard showing project lookup across services:
     ```
 ![project lookup example](assets/images/project-lookup-example.png)
 
-For additional information view the [Grafana](monitoring-info.md#grafana) portion of the [Monitoring Info](monitoring-info.md) documentation.
+For additional information view the [Grafana](monitoring-observability-overview.md#grafana) portion of the [Monitoring Info](monitoring-observability-overview.md) documentation.
 
 ## The Three Pillars of Observability
 
@@ -464,12 +464,11 @@ While Genestack provides a relatively comprehensive set of tooling and instructi
 ### Documentation
 
 - [Getting Started with Monitoring](monitoring-getting-started.md) - Complete setup guide
-- [Observability Stack Overview](monitoring-info.md) - Architecture details
-- [Base Component Metrics Reference](otel-base-metrics.md) - K8s and related component metrics 
-- [Additional Component Metrics Reference](otel-ext-metrics.md) - Database and additional component metrics 
-- [Monitoring Info](monitoring-info.md) - Prometheus configuration
+- [Observability Stack Overview](monitoring-observability-overview.md) - Architecture details
+- [Base Component Metrics Reference](monitoring-otel-base-metrics.md) - K8s and related component metrics 
+- [Monitoring Info](monitoring-observability-overview.md) - Prometheus configuration
 - [Alerting Info](alerting-info.md) - AlertManager setup
-- [Loki Installation](infrastructure-loki.md) - Loki deployment
+- [Loki Installation](monitoring-loki.md) - Loki deployment
 
 ### External Resources
 
@@ -481,7 +480,3 @@ While Genestack provides a relatively comprehensive set of tooling and instructi
 - [CNCF Observability Landscape](https://landscape.cncf.io/card-mode?category=observability-and-analysis)
 
 ---
-
-**Document Version**: 2.0  
-**Last Updated**: 2026-03-17  
-**Stack**: OpenTelemetry, Prometheus, Loki, Tempo, Grafana
